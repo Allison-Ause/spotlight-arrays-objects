@@ -85,14 +85,16 @@ export const addSneakerCount = ({ shoes, ...rest }) => {
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
 export const getBrandNames = (brands) => {
-  const result = Object.keys(brands);
-  return result;
-  
+  const result = Object.keys(brands)
+  return result
 }
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
-export const totalSneakerCount = () => {}
+export const totalSneakerCount = ({ Nike, Puma, Adidas }) => {
+  const result = Nike.shoes.length + Puma.shoes.length + Adidas.shoes.length
+  return result
+}
 
 // INPUT: An object
 // OUTPUT: An array with key value pairs converted to arrays
