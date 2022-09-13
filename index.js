@@ -15,13 +15,15 @@ export const printAddress = ({ name, address: { street, number, city, country } 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the funciton definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = ({ username, 
-  name: { first, last }, 
-  info: { 
-      favorites: { food, color }, 
-      pet: { name },
-      address: { street, number, city, country }
-    }}) => {
+export const printUserInfo = ({
+  username,
+  name: { first, last },
+  info: {
+    favorites: { food, color },
+    pet: { name },
+    address: { street, number, city, country },
+  },
+}) => {
   return `
     Username: ${username},
     Full Name: ${first} ${last},
@@ -38,11 +40,11 @@ export const printUserInfo = ({ username,
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
 export const getSum = (...rest) => {
-  let total = 0;
+  let total = 0
   for (const sum of rest) {
-    total += sum;
+    total += sum
   }
-  return total;
+  return total
 }
 
 // INPUT: an unknown number of arguments
@@ -50,7 +52,9 @@ export const getSum = (...rest) => {
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {}
+export const getFirstTwoArgs = (a, b, ...rest) => {
+  return [a, b, rest]
+}
 
 // INPUT: an object with the following structure
 // {
